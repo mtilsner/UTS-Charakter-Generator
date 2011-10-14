@@ -1,0 +1,42 @@
+html {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    font: 11px verdana, arial, helvetica, sans-serif;
+}
+
+input, select, textarea {
+    border: 1px solid #ccc;
+    margin: 2px 0;
+    padding: 2px 4px;
+}
+
+a:link, a:visited, a:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+div.centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+div.toprow {
+	background: #f0f0f0;
+	border-bottom: 1px #ccc solid;
+	position: fixed;
+	display: table-cell;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	padding: 10px 10px;
+	
+	text-align: right;
+	vertical-align: middle;
+	z-index: 15;
+}
+

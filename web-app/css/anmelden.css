@@ -1,0 +1,22 @@
+div.anmelden {
+	width: 400px;
+	padding-left: 175px;
+}
+
+.anmelden.openid.logo {
+	position: relative;
+	left: -175px;
+	margin-bottom: -20px;
+	z-index: -10;
+}
+
+.anmelden.openid.explain {
+	position: relative;
+	left: -175px;
+	bottom: 8px;
+}
+
+.anmelden.openid.identifier {
+	background: url('../images/anmelden/OpenID-identifier.gif') left center no-repeat;
+	padding-left: 16px;
+}
