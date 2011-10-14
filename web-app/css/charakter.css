@@ -85,7 +85,7 @@ div.name, div.ausruestung, div.attribut, div.talent   {
 	display: block;
 }
 
-.talent.value .nummer {
+.talent.value .wert {
 	width: 34px;
 	text-align: center;
 }
