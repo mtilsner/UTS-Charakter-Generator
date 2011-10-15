@@ -8,12 +8,13 @@ Event.observe(window, 'scroll', function(event){
 	while(i < seiten.length && (seiten[i].cumulativeScrollOffset()[1]-seiten[i].offsetTop+seiten[0].offsetTop) > (maxValue*3/4)) {
 		i++;
 	}
+	if(i == seiten.length) i--;
 	var seitennummer = seiten[i].classNames().find(function(cn){
 		return cn.startsWith("page_");
 	}).substr(5);
 	$("seitennummer_wert").update(seitennummer);
 })
-
+/*
 uts.chargen.charakter = {
 	rp: {
 		Funktionen: alleAktualisieren: function() {
@@ -80,3 +81,4 @@ uts.chargen.charakter.bonus.Funktionen.update.talent = {
 		});
 	}
 };
+*/

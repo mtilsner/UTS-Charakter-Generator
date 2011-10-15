@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="${resource(dir:'css',file:'charakter.css')}" />
         <g:set var="entityName" value="${message(code: 'charakter.label', default: 'Charakter')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
+		<g:javascript library="charakter" />
     </head>
     <body>
 		<div id="seitennummer" class="seitennummer">
