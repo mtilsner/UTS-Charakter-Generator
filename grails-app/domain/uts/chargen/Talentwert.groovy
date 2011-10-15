@@ -7,7 +7,7 @@ class Talentwert {
 
 	Integer wert
 	
-	static hasMany = [spezialisierungen: Spezialisierung]
+	static hasMany = [spezialisierungen: String]
 	
 	public Integer calculateRPKosten() {
 		def kosten = 0
