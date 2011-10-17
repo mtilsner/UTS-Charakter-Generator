@@ -6,7 +6,7 @@
 		<label for="ruestung" class="label"><g:message code="charakter.ruestung.label" default="Rüstung" /></label>
 		<div class="value">
 			<g:field type="number" min="-3" max="0" name="ruestung-wert" id="charakter-behinderung-ruestung-wert"
-				class="value publisher" value="0"
+				class="value" value="0"
 				data-updates="${Talenttyp.findAllByVonBehinderungBetroffen(true).collect({'.talenttyp.'+it.name+' .bonus'}).join(',')}"  />
 			<g:select id="charakter-behinderung-ruestung" name="ruestung" from="${Ruestung.list(sort: 'ruestungswert')}" optionKey="id" 
 					  optionValue="${{it.name+' ('+g.message(code:'charakter.ruestung.ruestungswert', default:'Rüstungswert')+': '+it.ruestungswert+')'}}"

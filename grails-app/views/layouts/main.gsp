@@ -5,9 +5,8 @@
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
         <link rel="stylesheet" href="${resource(dir:'css',file:'layout.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-        <g:javascript library="prototype-1.7" />
+        <g:javascript library="jquery" />
         <g:javascript library="application" />
-		<widgets:jsLibrary />
         <g:layoutHead />
     </head>
     <body>

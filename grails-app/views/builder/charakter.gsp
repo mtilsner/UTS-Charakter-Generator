@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="${resource(dir:'css',file:'charakter-a4.css')}" />
         <g:set var="entityName" value="${message(code: 'charakter.label', default: 'Charakter')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
+		<jq:plugin name="timedObserver" />
 		<g:javascript library="charakter" />
     </head>
     <body>
@@ -13,7 +14,6 @@
 			<g:message code="charakter.seite.label" default="Seite" />
 			<span id="seitennummer_wert">1</span>
 		</div>
-		<div id="log"></div>
 		<g:form>
 			<div class="page a4 centered page_1">
 				<div class="printable">
