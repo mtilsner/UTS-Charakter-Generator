@@ -15,3 +15,25 @@ if (Ajax && (Ajax != null)) {
 var uts = {
 	chargen : {}
 }
+
+var dependentFields = {};
+Event.observe(window,"load",function(event){
+	$$("[data-updates]").each(function(element){
+		var targets = $$(element.dataset.updates);
+		targets.each(function(t){
+			if(!t.id) t.id = "random-id-"+Math.random()*1000000;
+			if(!dependentFields[t.id]) dependentFields[t.id] = new Array();
+			dependentFields[t.id].push(element);
+		});
+		new Form.Element.Observer(element, 0.2, function(el,value){
+			var targets =  $$(el.dataset.updates);
+			targets.each(function(t){
+				var summe = 0;
+				dependentFields[t.id].each(function(f){
+					summe += parseInt(f.value);
+				});
+				$(t).value = summe;
+			});
+		});
+	});
+});
