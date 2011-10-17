@@ -3,6 +3,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <link rel="stylesheet" href="${resource(dir:'css',file:'charakter.css')}" />
+        <link rel="stylesheet" href="${resource(dir:'css',file:'charakter-a4.css')}" />
         <g:set var="entityName" value="${message(code: 'charakter.label', default: 'Charakter')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
 		<g:javascript library="charakter" />
@@ -18,7 +19,7 @@
 				<div class="printable">
 					<g:render template="name" />
 					<g:render template="attribute" />
-					<g:render template="ausruestung" />
+					<g:render template="behinderungen" />
 					<g:render template="talente" />
 				</div>
 			</div>

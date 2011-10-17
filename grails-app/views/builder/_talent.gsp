@@ -1,9 +1,9 @@
 <div class="talent ${talent.name}">
-	<label class="talent ${talent.name} label" for="${talent.name}">
+	<label class="label" for="talent.${talent.name}">
 		<g:message code="talenttyp.${talent.name}.label" default="${talent.name}" />
 	</label>
-	<div class="talent ${talent.name} value">
-		<g:field type="number" name="talent.${talent.name}.wert" value="${0}" min="0" max="3" pattern="[0-3]"
-	 		 	 class="talent ${talent.name} value wert" id="talent-${talent.name}-value-wert" />
+	<div class="value">
+		<widgets:numberWithBonus id="talent-${talent.name}" name="talent.${talent.name}"
+								 value="${0}" bonus="${0}" min="${0}" max="${3}" />
 	</div>
 </div>

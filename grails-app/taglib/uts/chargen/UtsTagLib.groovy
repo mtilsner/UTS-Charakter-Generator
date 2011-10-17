@@ -4,9 +4,11 @@ class UtsTagLib {
 	static namespace = "uts"
 	
 	def kaestchenAnzeige = { content,attrs ->
+		out << '<div class="kaestchenContainer">'
 		for(i in 1..(attrs.value)) {
 			out << '<div class="kaestchen">' + content(i) +'</div>'
 		}
+		out << '</div>'
 	}
 	
 	def lebensAnzeige = kaestchenAnzeige.curry {it -> "-${(int) (it+1)/2}"}
