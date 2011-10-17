@@ -1,0 +1,47 @@
+/* A4 Spezifisches Seitenlayout */
+div.page.a4 {
+	width: 210mm;
+	height: 297mm;
+	font-size: 3mm;
+}
+
+div.page.a4 input {
+	font-size: 3mm;
+}
+
+div.page.a4 .printable {
+	position: absolute;
+	left: 10mm;
+	right: 10mm;
+	top: 20mm;
+	bottom: 20mm;
+	overflow: hidden;
+}
+
+/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente und Vorteile */
+.name
+.behinderungen,
+.attribute,
+.talenttyp  {
+	margin: 5mm 0;
+}
+
+.name > .label,
+.behinderungen > .behinderung > .label,
+.attribute > .attribut > .label,
+.talenttyp > .talent > .label  {
+	width: 30mm;
+}
+
+.name > .value,
+.behinderungen > .behinderung > .value,
+.attribute > .attribut > .value,
+.talenttyp > .talent > .value  {
+	width: 160mm;
+}
+
+/* Spezifisches Layout für Charakter Name */
+.name .value input {
+	width: 160mm;
+}
+

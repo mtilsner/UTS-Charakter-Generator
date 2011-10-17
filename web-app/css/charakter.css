@@ -14,61 +14,46 @@ div.page {
 	margin: 10px;
 }
 
-div.page.a4 {
-	width: 210mm;
-	height: 297mm;
-	font-size: 3mm;
+/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente und Vorteile */
+.behinderungen,
+.attribute,
+.talenttyp  {
+	border: 0 none;
+	padding: 0;
+	display: table;
 }
 
-div.page.a4 input {
-	font-size: 3mm;
-}
-
-div.page .printable {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: 2cm 1cm;
-	overflow: hidden;
-}
-
-/* Allgemeines Layout für Charakter Name, Ausrüstung, Attribute, Talente und Vorteile */
-fieldset.ausruestung, fieldset.attribute, fieldset.talenttyp  {
-	border: 0px none;
-	margin: 10px 0px;
-	padding: 0px;
-}
-
-div.name, div.ausruestung, div.attribut, div.talent   {
+.name,
+.behinderung,
+.attribut,
+.talent   {
 	display: table-row;
 }
 
-.name.label, .ausruestung.label, .attribut.label, .talent.label  {
+.name .label,
+.behinderung .label,
+.attribut .label,
+.talent .label  {
 	display: table-cell;
-	width: 100px;
 }
 
-.name.value, .ausruestung.value, .attribut.value, .talent.value  {
+.name .value,
+.behinderung .value,
+.attribut .value,
+.talent .value  {
 	display: table-cell;
-	padding: 2px 0px;
-}
-
-.ausruestung.value, .attribut.value  {
-	margin: 4px;
-	display: table;
-	border-collapse: collapse;
-	margin: 2px 0px;
-}
-
-/* Spezifisches Layout für Charakter Name */
-.name.value input {
-	width: 100mm;
+	padding: .2em 0;
 }
 
 /* Spezifisches Layout für Attribute */
-.attribut.value .kaestchen {
-	width: 16px;
-	height: 16px;
+.attribut .value .kaestchenContainer {
+	display: table;
+	border-collapse: collapse;
+}
+
+.attribut .value .kaestchenContainer .kaestchen {
+	width: 1.5em;
+	height: 1.5em;
 	overflow: hidden;
 	display: table-cell;
 	border: 1px solid #ccc;
@@ -78,14 +63,29 @@ div.name, div.ausruestung, div.attribut, div.talent   {
 }
 
 /* Spezifisches Layout für Talente */
-.talenttyp.label {
+.talenttyp > .label {
 	font-size: 1.17em;
 	color: #333;
 	font-weight: bold;
-	display: block;
+	display: table-row;
 }
 
-.talent.value .wert {
-	width: 34px;
+.talent .value .wert {
+	width: 3em;
+	text-align: center;
+	color: #333;
+}
+
+.talent .value .bonus {
+	border: 0 none;
+	width: 2em;
+	color: #333;
+}
+
+.talent .value .summe {
+	font-weight: bold;
+	border: 1px solid #ccc;
+	border-radius: 2em;
+	width: 1.5em;
 	text-align: center;
 }
