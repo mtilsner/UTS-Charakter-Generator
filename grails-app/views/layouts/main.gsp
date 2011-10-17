@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
         <link rel="stylesheet" href="${resource(dir:'css',file:'layout.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-        <g:javascript library="jquery" />
+		<r:require modules="jquery-ui"/>
+		<r:layoutResources />
         <g:javascript library="application" />
         <g:layoutHead />
     </head>
@@ -22,7 +23,7 @@
 				<g:message code="authentication.notLoggedIn" default="Bitte melden Sie sich erst an" />
 			</g:else>
 		</div>
-		<div id="log"></div>
         <g:layoutBody />
+		<r:layoutResources />
     </body>
 </html>
