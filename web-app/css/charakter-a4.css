@@ -18,6 +18,11 @@ div.page.a4 .printable {
 	overflow: hidden;
 }
 
+/* Spezifisches Layout für Charakter Name */
+.name .value input {
+	width: 160mm;
+}
+
 /* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente und Vorteile */
 .name
 .behinderungen,
@@ -39,9 +44,3 @@ div.page.a4 .printable {
 .talenttyp > .talent > .value  {
 	width: 160mm;
 }
-
-/* Spezifisches Layout für Charakter Name */
-.name .value input {
-	width: 160mm;
-}
-
