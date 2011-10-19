@@ -44,3 +44,7 @@ div.page.a4 .printable {
 .talenttyp > .talent > .value  {
 	width: 160mm;
 }
+
+.talent .value .spezialisierung {
+	width: 123mm;
+}

@@ -42,7 +42,14 @@ div.page {
 .attribut .value,
 .talent .value  {
 	display: table-cell;
-	padding: .2em 0;
+	padding: 0.2em 0;
+}
+
+/* Spezifisches Layout für Charakter Name */
+.name .value input {
+	border: 0px none;
+	border-bottom: 1px solid #ccc;
+	padding: 0.2em 0;
 }
 
 /* Spezifisches Layout für Attribute */
@@ -74,6 +81,7 @@ div.page {
 	width: 3em;
 	text-align: center;
 	color: #333;
+	padding: 2px 0;
 }
 
 .talent .value .bonus {
@@ -88,4 +96,9 @@ div.page {
 	border-radius: 2em;
 	width: 1.5em;
 	text-align: center;
+}
+
+.talent .value .spezialisierung {
+	margin-left: 2em;
+	height: 1em;
 }

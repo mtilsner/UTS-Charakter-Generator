@@ -4,11 +4,11 @@
 		<g:message code="talenttyp.${talent.name}.label" default="${talent.name}" />
 	</label>
 	<div class="value">
-		<widgets:numberWithBonus id="talent-${talent.name}" name="talent.${talent.name}"
+		<widgets:numberWithBonus id="talent-${talent.name}" name="talent.${talent.name}", label="${talent.name}"
 								 value="${0}" bonus="${0}" min="${0}" max="${3}" />
 		<widgets:suggestiveMultipleInput id="talent-${talent.name}-spezialisierung-template"
 		 								 name="talent.${talent.name}.spezialisierung.template"
-		 						 		 class="spezialisierung template"
+		 						 		 class="spezialisierung"
 										 suggestions="${Spezialisierung.findAllByTalent(talent)}" />
 	</div>
 </div>

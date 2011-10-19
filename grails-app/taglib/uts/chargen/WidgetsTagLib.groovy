@@ -12,10 +12,12 @@ class WidgetsTagLib {
 		if(!attrs.value) attrs.value = 0
 		if(!attrs.bonus) attrs.bonus = 0
 		out << g.field(id:"${attrs.id}-wert", name:"${attrs.name}.wert", value:attrs.value, class:"${attrs.class ? atts.class : ''} wert numberWithBonus",
-		 			   type:"number", min:attrs.min, max:attrs.max, pattern:"[${attrs.min}-${attrs.max}]", 'data-updates':"#${attrs.id}-summe")
-		out << g.field(id:"${attrs.id}-bonus", name:"${attrs.name}.bonus", value:g.formatNumber(format:"+#;-#", number: attrs.bonus),
-					    class:"${attrs.class ? atts.class : ''} bonus numberWithBonus", type:"text", readonly:"readonly", 'data-updates':"#${attrs.id}-summe")
-		out << g.field(id:"${attrs.id}-summe", name:"${attrs.name}.summe", value:attrs.value+attrs.bonus,
+		 			   type:"number", min:attrs.min, max:attrs.max, pattern:"[${attrs.min}-${attrs.max}]",
+					   'data-updates': "[{target: '#${attrs.id}-summe', message: '${attrs.label} Talentwert', value:(function(el){return \$(el).val()})}]")
+		out << g.field(id:"${attrs.id}-bonus", name:"${attrs.name}.bonus", value:g.formatNumber(format:"+#;-#", number: attrs.bonus), tabindex: -1,
+					    class:"${attrs.class ? atts.class : ''} bonus numberWithBonus", type:"text", readonly:"readonly",
+					   'data-updates': "[{target: '#${attrs.id}-summe', message: '${attrs.label} Bonus', value:(function(el){return \$(el).val()})}]")
+		out << g.field(id:"${attrs.id}-summe", name:"${attrs.name}.summe", value:attrs.value+attrs.bonus, tabindex: -1,
 					   class:"${attrs.class ? atts.class : ''} summe numberWithBonus", type:"text", readonly:"readonly")
 	}
 	
@@ -41,8 +43,8 @@ class WidgetsTagLib {
 					this.value = terms.join( ", " );
 					return false;
 				}
-			}).autoResize();
+			});
 		""" }
-		out << g.textArea(id:attrs.id, name:attrs.name, value:attrs.value, class:(attrs.class ? attrs.class : ''), placeholder: "${attrs.suggestions.join(", ")}")
+		out << g.textField(id:attrs.id, name:attrs.name, value:attrs.value, class:(attrs.class ? attrs.class : ''), placeholder: "${attrs.suggestions.join(", ")}")
 	}
 }
