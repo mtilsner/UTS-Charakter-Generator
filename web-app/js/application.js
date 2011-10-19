@@ -19,11 +19,13 @@ $(document).ready(function(event){
 						$.each(dependentFields[t.id], function(i, f){
 							var increment = (f.value instanceof Function) ? parseInt(f.value(f.element)) : parseInt(f.value);
 							summe += increment;
-							var incrementMessage = (increment < 0) ? increment : "+"+increment;
-							if(f.message instanceof Function)
-								titles.push(incrementMessage+": "+f.message(f));
-							else
-								titles.push(incrementMessage+": "+f.message);
+							if(f.message) {
+								var incrementMessage = (increment < 0) ? increment : "+"+increment;
+								if(f.message instanceof Function)
+									titles.push(incrementMessage+": "+f.message(f));
+									else
+									titles.push(incrementMessage+": "+f.message);
+							}
 						});
 						$(t).attr("title", titles.join("\n"));
 						$(t).val(summe);
