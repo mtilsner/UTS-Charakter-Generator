@@ -2,12 +2,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <link rel="stylesheet" href="${resource(dir:'css',file:'charakter.css')}" />
-        <link rel="stylesheet" href="${resource(dir:'css',file:'charakter-a4.css')}" />
         <g:set var="entityName" value="${message(code: 'charakter.label', default: 'Charakter')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
-		<jq:plugin name="timedObserver" />
-		<g:javascript library="charakter" />
+		<r:require module="charakter" />
+		<r:require module="widgets" />
     </head>
     <body>
 		<div id="seitennummer" class="seitennummer">
