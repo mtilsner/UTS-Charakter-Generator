@@ -7,10 +7,14 @@ modules = {
 	}
 	timedObserver {
 		dependsOn "jquery"
-		resource url:"js/jquery/jquery-timedObserver.js"
+		resource url:"js/jquery/jquery.timedObserver.js"
+	}
+	autoResize {
+		dependsOn "jquery"
+		resource url:"js/jquery/jquery.autoresize.js"
 	}
 	charakter {
-		dependsOn "jquery-ui, timedObserver"
+		dependsOn "jquery-ui, timedObserver, autoResize"
 		resource url:"css/charakter.css"
 		resource url:"css/charakter-a4.css"
 		resource url:"js/charakter.js"
