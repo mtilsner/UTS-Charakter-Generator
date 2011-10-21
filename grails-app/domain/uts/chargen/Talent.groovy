@@ -2,7 +2,7 @@ package uts.chargen
 
 class Talent {
 
-	static hasMany = [spezialisierungen:Spezialisierung]
+	static hasMany = [spezialisierungen:Talentspezialisierung]
 
 	String name
 	String beschreibung

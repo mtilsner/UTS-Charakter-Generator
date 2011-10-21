@@ -1,4 +1,5 @@
-<%@ page import="uts.chargen.Spezialisierung" %>
+<%@ page import="uts.chargen.Talentspezialisierung" %>
+<%@ page import="uts.chargen.Talenttypspezialisierung" %>
 <div class="talent ${talent.name}">
 	<label class="label" for="talent-${talent.name}">
 		<g:message code="talenttyp.${talent.name}.label" default="${talent.name}" />
@@ -12,7 +13,7 @@
 		<widgets:suggestiveMultipleInput id="talent-${talent.name}-spezialisierung-template"
 		 								 name="talent.${talent.name}.spezialisierung.template"
 		 						 		 class="spezialisierung"
-										 suggestions="${Spezialisierung.findAllByTalent(talent)}"
+										 suggestions="${Talentspezialisierung.findAllByTalent(talent).plus(Talenttypspezialisierung.findAllByTalenttyp(talent.typ))}"
 										 data-updates='["${updates}"]' />
 		<g:set var="updates" value="{target:'.rp-talent-${talent.typ.name}', value:(function(el){return \$(el).val()})}" />	
 		<g:textField id="talent-${talent.name}-rp" name="talent.${talent.name}.rp" class="rp rp-talent rp-talent-${talent.name}"

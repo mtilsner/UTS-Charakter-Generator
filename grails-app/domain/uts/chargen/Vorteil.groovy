@@ -22,6 +22,7 @@ class Vorteil {
 		beschreibung widget:'textarea'
 		parameterOptions nullable:true
 		effectScript nullable:true,widget:'textarea'
+		voraussetzungsScript widget:'textarea'
 		rpkostenScript widget:'textarea'
     }
 
@@ -29,5 +30,6 @@ class Vorteil {
 		beschreibung type:'text'
 		effectScript type:'text'
 		rpkostenScript type:'text'
+		voraussetzungScript type:'text'
 	}
 }

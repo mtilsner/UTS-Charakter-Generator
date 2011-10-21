@@ -1,6 +1,6 @@
 package uts.chargen
 
-class SpezialisierungController {
+class TalentspezialisierungController {
 
     static scaffold = true
 }
