@@ -7,6 +7,24 @@ div.seitennummer {
 	z-index: 30;
 }
 
+/* Resourcepunkte */
+div.resourcepunkte {
+	position: fixed;
+	top: 10px;
+	left: 80px;
+	color: #333;
+	z-index: 30;
+}
+
+div.resourcepunkte .rp {
+	position: relative;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #000;
+}
+
 /* Seitenlayout */
 div.page {
 	position: relative;
@@ -26,6 +44,7 @@ div.page {
 .name,
 .behinderung,
 .attribut,
+.talenttyp-header,
 .talent   {
 	display: table-row;
 }
@@ -33,6 +52,7 @@ div.page {
 .name .label,
 .behinderung .label,
 .attribut .label,
+.talenttyp-header .label,
 .talent .label  {
 	display: table-cell;
 }
@@ -40,6 +60,7 @@ div.page {
 .name .value,
 .behinderung .value,
 .attribut .value,
+.talenttyp-header .value,
 .talent .value  {
 	display: table-cell;
 	padding: 0.2em 0;
@@ -53,28 +74,24 @@ div.page {
 }
 
 /* Spezifisches Layout für Attribute */
-.attribut .value .kaestchenContainer {
-	display: table;
-	border-collapse: collapse;
+.attribut .value {
+	position: relative;
 }
 
-.attribut .value .kaestchenContainer .kaestchen {
-	width: 1.5em;
-	height: 1.5em;
-	overflow: hidden;
-	display: table-cell;
-	border: 1px solid #ccc;
-	text-align: center;
-	vertical-align: middle;
-	color: #999;
+.attribut .kaestchenContainer {
+	position: absolute;
+	margin-left: 1.5em;
 }
 
 /* Spezifisches Layout für Talente */
-.talenttyp > .label {
+.talenttyp > .talenttyp-header > .label {
 	font-size: 1.17em;
 	color: #333;
 	font-weight: bold;
-	display: table-row;
+}
+
+.talenttyp .value, .talent .value {
+	position: relative;
 }
 
 .talent .value .wert {
@@ -90,7 +107,7 @@ div.page {
 	color: #333;
 }
 
-.talent .value .summe {
+.summe {
 	font-weight: bold;
 	border: 1px solid #ccc;
 	border-radius: 2em;
@@ -101,4 +118,17 @@ div.page {
 .talent .value .spezialisierung {
 	margin-left: 2em;
 	height: 1em;
+}
+
+.rp {
+	position: absolute;
+	width: 2em;
+	height: 1em;
+}
+
+/* Generelles Layout von ResourcePunkt Anzeigen */
+.rp {
+	border: 0px none;
+	text-align: right;
+	color: #999;
 }

@@ -14,13 +14,15 @@ modules = {
 		resource url:"js/jquery/jquery.autoresize.js"
 	}
 	charakter {
-		dependsOn "jquery-ui, timedObserver, autoResize"
+		dependsOn "jquery-ui, timedObserver, autoResize, application"
 		resource url:"css/charakter.css"
 		resource url:"css/charakter-a4.css"
 		resource url:"js/charakter.js"
+		resource url:"/library/javascript", linkOverride:'/../library/javascript', attrs:[type:"js"]
 	}
 	widgets {
 		dependsOn "jquery-ui"
 		resource url:"js/widgets.js"
+		resource url:"css/widgets.css"
 	}
 }

@@ -1,0 +1,49 @@
+.kaestchenContainer {
+	display: inline-block;
+	border-collapse: collapse;
+	overflow: hidden;
+	height: 19px;
+}
+
+.kaestchen_1 {
+	width: 19px;
+}
+
+.kaestchen_2 {
+	width: 37px;
+}
+
+.kaestchen_3 {
+	width: 55px;
+}
+
+.kaestchen_4 {
+	width: 73px;
+}
+
+.kaestchen_5 {
+	width: 91px;
+}
+
+.kaestchen_6 {
+	width: 109px;
+}
+
+.kaestchenContainer .kaestchen:first-child {
+	border-left: 1px solid #ccc;
+}
+
+.kaestchenContainer .kaestchen {
+	width: 17px;
+	height: 17px;
+	line-height: 17px;
+	overflow: hidden;
+	display: inline-block;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	vertical-align: middle;
+	color: #999;
+}
+

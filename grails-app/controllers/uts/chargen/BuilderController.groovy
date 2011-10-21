@@ -21,4 +21,7 @@ class BuilderController {
     	}
 	}
 
+	def javascript = {	
+	}
+
 }

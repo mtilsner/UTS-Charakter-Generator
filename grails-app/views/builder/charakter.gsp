@@ -12,6 +12,10 @@
 			<g:message code="charakter.seite.label" default="Seite" />
 			<span id="seitennummer_wert">1</span>
 		</div>
+		<div id="resourcepunkte" class="resourcepunkte">
+			<g:message code="charakter.resourcepunkte.label" default="Resourcepunkte" />
+			<g:field type="text" id="resourcepunkte_wert" name="resourcepunkte" class="rp rp-charakter" value="0" tabindex="-1" readonly="readonly" />
+		</div>
 		<g:form>
 			<div class="page a4 centered page_1">
 				<div class="printable">

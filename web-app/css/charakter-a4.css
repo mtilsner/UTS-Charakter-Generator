@@ -13,9 +13,8 @@ div.page.a4 .printable {
 	position: absolute;
 	left: 10mm;
 	right: 10mm;
-	top: 20mm;
-	bottom: 20mm;
-	overflow: hidden;
+	top: 15mm;
+	bottom: 15mm;
 }
 
 /* Spezifisches Layout für Charakter Name */
@@ -34,6 +33,7 @@ div.page.a4 .printable {
 .name > .label,
 .behinderungen > .behinderung > .label,
 .attribute > .attribut > .label,
+.talenttyp > .talenttyp-header > .label,
 .talenttyp > .talent > .label  {
 	width: 30mm;
 }
@@ -41,10 +41,15 @@ div.page.a4 .printable {
 .name > .value,
 .behinderungen > .behinderung > .value,
 .attribute > .attribut > .value,
+.talenttyp > .talenttyp-header > .value,
 .talenttyp > .talent > .value  {
 	width: 160mm;
 }
 
 .talent .value .spezialisierung {
 	width: 123mm;
+}
+
+.talenttyp-header .rp, .talent .rp {
+	right: -20mm;
 }

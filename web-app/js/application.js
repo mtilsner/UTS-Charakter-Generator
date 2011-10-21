@@ -1,3 +1,6 @@
+var uts = {};
+uts.chargen = {};
+
 var dependentFields = {};
 $(document).ready(function(event){
 	$("[data-updates]").each(function(index,element){
@@ -21,14 +24,15 @@ $(document).ready(function(event){
 							summe += increment;
 							if(f.message) {
 								var incrementMessage = (increment < 0) ? increment : "+"+increment;
-								if(f.message instanceof Function)
-									titles.push(incrementMessage+": "+f.message(f));
-									else
-									titles.push(incrementMessage+": "+f.message);
+								if(increment != 0) {
+									if(f.message instanceof Function) titles.push(incrementMessage+": "+f.message(f.element));
+									else titles.push(incrementMessage+": "+f.message);
+								}
 							}
 						});
 						$(t).attr("title", titles.join("\n"));
-						$(t).val(summe);
+						var outputSumme = (summe >= 0 && t.dataset.prefixpositives) ? "+"+summe : summe;
+						$(t).val(outputSumme);
 					});
 				});
 			});

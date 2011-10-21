@@ -1,5 +1,14 @@
 <fieldset class="${talenttyp.name} talenttyp">
-	<label class="${talenttyp.name} label"><g:message code="talenttyp.${talenttyp.name}.label" default="${talenttyp.name}" /></label>
-	<g:render template="talent"
-			  var="talent" collection="${talenttyp.talente.sort({a,b -> a.name <=> b.name})}" />
+	<div class="talenttyp-header">
+		<label class="label">
+			<g:message code="talenttyp.${talenttyp.name}.label" default="${talenttyp.name}" />
+		</label>
+		<div class="value">
+			<g:textField name="${talenttyp.name}.deco" style="visibility:hidden;" tabindex="-1" />
+			<g:set var="updates" value="{target:'.rp-charakter', value:(function(el){return \$(el).val()})}" />	
+			<g:textField id="talenttyp-${talenttyp.name}-rp" name="talent.${talenttyp.name}.rp" class="rp rp-talenttyp rp-talent-${talenttyp.name}"
+					 	value="0" tabindex="-1" readonly="readonly" data-updates='["${updates}"]' />		
+		</div>
+	</div>
+	<g:render template="talent" var="talent" collection="${talenttyp.talente.sort({a,b -> a.name <=> b.name})}" />
 </fieldset>

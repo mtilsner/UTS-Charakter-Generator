@@ -1,6 +1,10 @@
 class UrlMappings {
 
 	static mappings = {
+		"/library/javascript" {
+			controller = "builder"
+			action ="javascript"
+		}
 		"/charakter/new" {
 			controller = "builder"
 			action = "create"
