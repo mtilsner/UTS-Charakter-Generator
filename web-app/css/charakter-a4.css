@@ -13,8 +13,8 @@ div.page.a4 .printable {
 	position: absolute;
 	left: 10mm;
 	right: 10mm;
-	top: 15mm;
-	bottom: 15mm;
+	top: 12.5mm;
+	bottom: 12.5mm;
 }
 
 /* Spezifisches Layout für Charakter Name */
@@ -36,6 +36,10 @@ div.page.a4 .printable {
 .talenttyp > .talenttyp-header > .label,
 .talenttyp > .talent > .label  {
 	width: 30mm;
+}
+
+.talenttyp > .talent > input.label {
+	width: 28mm;
 }
 
 .name > .value,

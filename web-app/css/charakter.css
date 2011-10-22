@@ -94,6 +94,12 @@ div.page {
 	position: relative;
 }
 
+.talent input.label {
+	border: 0 none;
+	border-bottom: 1px solid #ccc;
+	margin-left: -5px;
+}
+
 .talent .value .wert {
 	width: 3em;
 	text-align: center;

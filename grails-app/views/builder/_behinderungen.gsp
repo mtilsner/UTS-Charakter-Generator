@@ -1,8 +1,9 @@
 <%@ page import="uts.chargen.Ruestung" %>
 <%@ page import="uts.chargen.Schild" %>
 <%@ page import="uts.chargen.Talenttyp" %>
-<g:set var="talenttypSelector" value="${Talenttyp.findAllByVonBehinderungBetroffen(true).collect({'.talenttyp.'+it.name+' .bonus'}).join(',')}" />
+<section id="behinderungen">
 <fieldset class="behinderungen">
+	<g:set var="talenttypSelector" value="${Talenttyp.findAllByVonBehinderungBetroffen(true).collect({'.talenttyp.'+it.name+' .bonus'}).join(',')}" />
 	<g:set var="updateBehinderung" value="{target:'${talenttypSelector}', message:(function(el){return \$('#'+el.id+' option:selected')[0].dataset.message}),  value:(function(el){return parseInt(\$('#'+el.id+' option:selected')[0].dataset.behinderung)})}" />	
 
 	<div class="behinderung ruestung">
@@ -34,3 +35,4 @@
 		</div>
 	</div>
 </fieldset>
+</section>

@@ -24,15 +24,27 @@ class WidgetsTagLib {
 		if(!attrs.bonus) attrs.bonus = 0
 		if(!attrs.'data-updates') attrs.'data-updates' = []
 		if(!attrs.name) attrs.name = attrs.id
-		attrs.'data-updates'.add("{target: '#${attrs.id}-summe', message: '${attrs.label} Talentwert', value:(function(el){return \$(el).val()})}")
+		attrs.'data-updates'.add("{target: '#${attrs.id}-summe', message:(function(el){return ${attrs.label}+' Talentwert'}), value:(function(el){return \$(el).val()})}")
 		out << g.field(id:"${attrs.id}", name:"${attrs.name}", value:attrs.value, class:"${attrs.class ? atts.class : ''} wert numberWithBonus",
 		 			   type:"number", min:attrs.min, max:attrs.max, pattern:"[${attrs.min}-${attrs.max}]",
 					   'data-updates': "${attrs.'data-updates'}")
 		out << g.field(id:"${attrs.id}-bonus", name:"${attrs.name}.bonus", value:g.formatNumber(format:"+#;-#", number: attrs.bonus), tabindex: -1,
 					    class:"${attrs.class ? atts.class : ''} bonus numberWithBonus", type:"text", readonly:"readonly", 'data-prefixpositives':"true", 
-					   'data-updates': "[{target: '#${attrs.id}-summe', message: '${attrs.label} Bonus', value:(function(el){return \$(el).val()})}]")
+					   'data-updates': "[{target: '#${attrs.id}-summe', message:(function(el){return ${attrs.label}+' Bonus'}), value:(function(el){return \$(el).val()})}]")
 		out << g.field(id:"${attrs.id}-summe", name:"${attrs.name}.summe", value:attrs.value+attrs.bonus, tabindex: -1,
 					   class:"${attrs.class ? atts.class : ''} summe numberWithBonus", type:"text", readonly:"readonly")
+	}
+	
+	def suggestiveInput = { attrs ->
+		def autocompleteJsSource = attrs.suggestions.collect({'"'+it.name+'"'})
+		out << r.script { """
+			\$("#${attrs.id}").autocomplete({
+				source: ${autocompleteJsSource}
+			});
+		""" }
+		if(!attrs.'data-updates') attrs.'data-updates' = []
+		out << g.textField(id:attrs.id, name:attrs.name, value:attrs.value, 'data-updates':attrs.'data-updates',
+						   class:(attrs.class ? attrs.class : ''))
 	}
 	
 	def suggestiveMultipleInput = { attrs ->
@@ -61,6 +73,6 @@ class WidgetsTagLib {
 		""" }
 		if(!attrs.'data-updates') attrs.'data-updates' = []
 		out << g.textField(id:attrs.id, name:attrs.name, value:attrs.value, 'data-updates':attrs.'data-updates',
-						   class:(attrs.class ? attrs.class : ''), placeholder: "${attrs.suggestions.join(", ")}")
+						   class:(attrs.class ? attrs.class : ''), placeholder: attrs.placeholder)
 	}
 }

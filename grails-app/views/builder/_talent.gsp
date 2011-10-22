@@ -6,7 +6,7 @@
 	</label>
 	<div class="value">
 		<g:set var="updates" value="{target:'#talent-${talent.name}-rp', value:(function(el){return uts.chargen.rp.talentLevelKosten(parseInt(\$(el).val()))})}" />	
-		<widgets:numberWithBonus id="talent-${talent.name}" name="talent.${talent.name}" label="${talent.name}"
+		<widgets:numberWithBonus id="talent-${talent.name}" name="talent.${talent.name}" label="'${talent.name}'"
 								 value="${0}" bonus="${0}" min="${0}" max="${3}"
 								 data-updates='["${updates}"]' />
 		<g:set var="updates" value="{target:'#talent-${talent.name}-rp', value:(function(el){return uts.chargen.rp.talentSpezialisierungsKosten(\$.grep(\$(el).val().split(','),function(s){ return \$.trim(s) != '' }))})}" />	

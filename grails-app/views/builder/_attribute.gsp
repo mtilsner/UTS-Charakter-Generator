@@ -1,3 +1,4 @@
+<section id="attribute">
 <fieldset class="attribute">
 	<div class="attribut leben">
 		<label for="leben" class="label"><g:message code="charakter.leben.label" default="Leben" /></label>
@@ -43,4 +44,4 @@
 		</div>
 	</div>
 </fieldset>
-
+</section>
