@@ -27,6 +27,7 @@
 			</div>
 			<div class="page a4 centered page_2">
 				<div class="printable">
+					<g:render template="talente-seite2" />
 				</div>
 			</div>
 		</g:form>
