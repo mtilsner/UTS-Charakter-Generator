@@ -12,7 +12,10 @@
 		</div>
 	</div>
 	<g:render template="talent" var="talent" collection="${talente}" />
-	<g:each var="index" in="${1..3}">
+	<g:if test="${!anzahl}">
+		<g:set var="anzahl" value="${3}" />
+	</g:if>
+	<g:each var="index" in="${1..(anzahl-talente.size())}">
 		<g:render template="talent-flexibel" model="['index': index, 'talenttyp': talenttyp, 'talente': talenttyp.talente.findAll({ !talente.contains(it) })]" var="index" bean="${index}" />
 	</g:each>
 </fieldset>
