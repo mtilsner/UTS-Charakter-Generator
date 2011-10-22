@@ -73,6 +73,6 @@ class WidgetsTagLib {
 		""" }
 		if(!attrs.'data-updates') attrs.'data-updates' = []
 		out << g.textField(id:attrs.id, name:attrs.name, value:attrs.value, 'data-updates':attrs.'data-updates',
-						   class:(attrs.class ? attrs.class : ''), placeholder: attrs.placeholder)
+						   class:(attrs.class ? attrs.class : ''), placeholder: "${attrs.suggestions.join(", ")}")
 	}
 }
