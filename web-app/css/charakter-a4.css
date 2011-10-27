@@ -1,15 +1,19 @@
 /* A4 Spezifisches Seitenlayout */
-div.page.a4 {
+.page.a4 {
 	width: 210mm;
 	height: 297mm;
-	font-size: 3mm;
+	font-size: 8pt;
 }
 
-div.page.a4 input {
-	font-size: 3mm;
+.page.a4 input {
+	font-size: 8pt;
+	height: 14pt;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 0 2px;
 }
 
-div.page.a4 .printable {
+.page.a4 .printable {
 	position: absolute;
 	left: 10mm;
 	right: 10mm;
@@ -17,43 +21,11 @@ div.page.a4 .printable {
 	bottom: 12.5mm;
 }
 
-/* Spezifisches Layout für Charakter Name */
-.name .value input {
-	width: 160mm;
+.page.a4 .rp {
+	right: -20mm !important;
 }
 
-/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente und Vorteile */
-.name
-.behinderungen,
-.attribute,
-.talenttyp  {
-	margin: 5mm 0;
-}
-
-.name > .label,
-.behinderungen > .behinderung > .label,
-.attribute > .attribut > .label,
-.talenttyp > .talenttyp-header > .label,
-.talenttyp > .talent > .label  {
-	width: 30mm;
-}
-
-.talenttyp > .talent > input.label {
-	width: 28mm;
-}
-
-.name > .value,
-.behinderungen > .behinderung > .value,
-.attribute > .attribut > .value,
-.talenttyp > .talenttyp-header > .value,
-.talenttyp > .talent > .value  {
-	width: 160mm;
-}
-
-.talent .value .spezialisierung {
-	width: 123mm;
-}
-
-.talenttyp-header .rp, .talent .rp {
-	right: -20mm;
-}
+/* .notizen .value {
+	width: 180mm;
+	height: 110mm;
+}*/

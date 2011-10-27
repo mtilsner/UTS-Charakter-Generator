@@ -2,11 +2,11 @@
 <%@ page import="uts.chargen.Schild" %>
 <%@ page import="uts.chargen.Talenttyp" %>
 <section id="behinderungen">
-<fieldset class="behinderungen">
+<fieldset class="fieldset behinderungen">
 	<g:set var="talenttypSelector" value="${Talenttyp.findAllByVonBehinderungBetroffen(true).collect({'.talenttyp.'+it.name+' .bonus'}).join(',')}" />
 	<g:set var="updateBehinderung" value="{target:'${talenttypSelector}', message:(function(el){return \$('#'+el.id+' option:selected')[0].dataset.message}),  value:(function(el){return parseInt(\$('#'+el.id+' option:selected')[0].dataset.behinderung)})}" />	
 
-	<div class="behinderung ruestung">
+	<div class="field behinderung ruestung">
 		<label for="ruestung" class="label"><g:message code="charakter.ruestung.label" default="Rüstung" /></label>
 		<div class="value">
 			<g:set var="update" value="${[updateBehinderung]}" />
@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	
-	<div class="behinderung schild">
+	<div class="field behinderung schild">
 		<label for="schild" class="label"><g:message code="charakter.schild.label" default="Schild" /></label>
 		<div class="value">
 			<g:set var="updateParierbonus" value="{target:'#talent-Parieren-bonus', message:(function(el){return  \$('#'+el.id+' option:selected')[0].dataset.message}),  value:(function(el){return parseInt(\$(el).val())})}" />					

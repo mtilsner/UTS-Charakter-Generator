@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="layout" content="main" />
+        <meta name="layout" content="builder" />
         <g:set var="entityName" value="${message(code: 'charakter.label', default: 'Charakter')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
 		<r:require module="charakter" />
@@ -28,6 +28,7 @@
 			<div class="page a4 centered page_2">
 				<div class="printable">
 					<g:render template="talente-seite2" />
+					<g:render template="notizen" />
 				</div>
 			</div>
 		</g:form>

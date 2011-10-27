@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
 <head>
-        <title><g:layoutTitle default="Grails" /></title>
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
 		<r:require module="application" />

@@ -9,10 +9,13 @@ body {
     font: 11px verdana, arial, helvetica, sans-serif;
 }
 
+input, textarea {
+    border: 1px solid #ccc;	
+}
+
 input, select, textarea {
-    border: 1px solid #ccc;
-    margin: 1px 0;
     padding: 2px 4px;
+    margin: 0;
 }
 
 a:link, a:visited, a:hover {

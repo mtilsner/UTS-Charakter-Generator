@@ -1,6 +1,6 @@
 <section id="attribute">
-<fieldset class="attribute">
-	<div class="attribut leben">
+<fieldset class="fieldset attribute">
+	<div class="field attribut leben">
 		<label for="leben" class="label"><g:message code="charakter.leben.label" default="Leben" /></label>
 		<div class="value">
 			<input type="hidden" id="charakter-leben-basis" name="leben" value="5" data-updates="[{target:'#charakter-leben-summe', value:(function(el){return parseInt($(el).val())})}]" />
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	
-	<div class="attribut energie">
+	<div class="field attribut energie">
 		<label for="energie" class="label"><g:message code="charakter.energie.label" default="Energie" /></label>
 		<div class="value">
 			<input type="hidden" id="charakter-energie-basis" name="energie" value="5" data-updates="[{target:'#charakter-energie-summe', value:(function(el){return parseInt($(el).val())})}]" />
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	
-	<div class="attribut stabilitaet">
+	<div class="field attribut stabilitaet">
 		<label for="stabilitaet" class="attribut stabilitaet label"><g:message code="charakter.stabilitaet.label" default="Stabilität" /></label>
 		<div class="attribut stabilitaet value">
 			<input type="hidden" id="charakter-stabilitaet-basis" name="stabilitaet" value="5" data-updates="[{target:'#charakter-stabilitaet-summe', value:(function(el){return parseInt($(el).val())})}]" />

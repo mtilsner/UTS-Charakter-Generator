@@ -23,6 +23,8 @@ div.resourcepunkte .rp {
 	padding: 0;
 	text-align: left;
 	color: #000;
+	width: 3em;
+	border: 0 none;
 }
 
 /* Seitenlayout */
@@ -32,109 +34,153 @@ div.page {
 	margin: 10px;
 }
 
-/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente und Vorteile */
-.behinderungen,
-.attribute,
-.talenttyp  {
-	border: 0 none;
+/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente, Notizen und Vorteile */
+.page section {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 16pt 0;
 	padding: 0;
-	display: table;
 }
 
-.name,
-.behinderung,
-.attribut,
-.talenttyp-header,
-.talent   {
-	display: table-row;
+.page .legend {
+	position: relative;
+	width: 100%;
+	font-size: 1.2em;
+	color: #333;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
 }
 
-.name .label,
-.behinderung .label,
-.attribut .label,
-.talenttyp-header .label,
-.talent .label  {
-	display: table-cell;
+.page .fieldset {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 8pt 0;
+	border: 0 none;
 }
 
-.name .value,
-.behinderung .value,
-.attribut .value,
-.talenttyp-header .value,
-.talent .value  {
-	display: table-cell;
-	padding: 0.2em 0;
-}
-
-/* Spezifisches Layout für Charakter Name */
-.name .value input {
-	border: 0px none;
-	border-bottom: 1px solid #ccc;
-	padding: 0.2em 0;
-}
-
-/* Spezifisches Layout für Attribute */
-.attribut .value {
+.page .field {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 3pt 0;
 	position: relative;
 }
 
-.attribut .kaestchenContainer {
-	position: absolute;
-	margin-left: 1.5em;
+.page .field .label {
+	display: inline-block;
+	width: 15%;
+	line-height: 1.75em;
+	position: relative;
 }
 
-/* Spezifisches Layout für Talente */
-.talenttyp > .talenttyp-header > .label {
-	font-size: 1.17em;
-	color: #333;
+.page .field .value {
+	display: inline-block;
+	width: 85%;
+	position: absolute;
+	left: 15%;
+	top: 3pt;
+}
+
+.page .field .value input {
+	margin: 0;
+}
+
+.page .field .value input.summe {
+	font-weight: bold;
+	border-radius: 2em;
+	width: 2.25em;
+	text-align: center;
+}
+
+.page .rp {
+	position: absolute;
+	width: 2em;
+	height: 1em;
+	border: 0 none;
+	text-align: right;
+	padding-right: 0px;
+}
+
+.page .legend .rp {
 	font-weight: bold;
 }
 
-.talenttyp .value, .talent .value {
-	position: relative;
+/* Spezielles Layout */
+.page .field.name .value .stretcher {
+	position: absolute;
+	left: 0;
+	right: 0px;
+}
+.page .field.name .value input {
+	width: 100%;
+	border: 0px none;
+	border-bottom: 1px solid #ccc;
 }
 
-.talent input.label {
+.page .field.attribut .value .kaestchenContainer {
+	position: absolute;
+	top: 0;
+	left: 3.4em;
+	margin-left: 2px;
+}
+
+.page .field.talent-flexibel .label {
+	padding: 0;
+}
+
+.page .field.talent-flexibel .label input {
 	border: 0 none;
 	border-bottom: 1px solid #ccc;
 	margin-left: -5px;
+	width: 90%;
 }
 
-.talent .value .wert {
-	width: 3em;
+.page .field.talent .value .wert {
+	width: 4em;
 	text-align: center;
 	color: #333;
-	padding: 2px 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.talent .value .bonus {
+.page .field.talent .value .bonus {
 	border: 0 none;
-	width: 2em;
+	width: 3em;
 	color: #333;
-}
-
-.summe {
-	font-weight: bold;
-	border: 1px solid #ccc;
-	border-radius: 2em;
-	width: 1.5em;
 	text-align: center;
 }
 
-.talent .value .spezialisierung {
-	margin-left: 2em;
-	height: 1em;
-}
-
-.rp {
+.page .field.talent .value .stretcher {
 	position: absolute;
-	width: 2em;
-	height: 1em;
+	right: 0px;
+	left: 7.5em;
+	margin-left: 24px;
+	top: 0;
 }
 
-/* Generelles Layout von ResourcePunkt Anzeigen */
-.rp {
-	border: 0px none;
-	text-align: right;
-	color: #999;
+.page .field.talent .value .spezialisierung {
+	width: 100%;
 }
+
+
+
+
+/* Generelles Layout der Notizen *
+.notizen .label {
+	font-size: 1.17em;
+	color: #333;
+	font-weight: bold;
+	
+}
+
+.notizen .value {
+	border: 1px solid #ccc;
+	padding: 1em;
+	margin-top: 5px;
+	margin-left: -5px;
+}
+*/
