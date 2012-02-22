@@ -3,9 +3,14 @@ package uts.chargen
 class Charakter {
 
 	static hasMany = [talentwerte:Talentwert,vorteilswerte:Vorteilswert]
+	Map talentwerte = [:]
+	Map vorteilswerte = [:]
 
 	String name
+	String notizen = ""
 	
+	String image
+
 	Integer leben = 5
 	Integer energie = 5
 	Integer stabilitaet = 5
@@ -13,21 +18,16 @@ class Charakter {
 	Ruestung ruestung
 	Schild schild
 
-	Avatar avatar
-
 	User nutzer
 
-	public Integer calculateRPKosten() {
-		def kosten = 0
-		talentwerte.each { kosten += it.calculateRPKosten() }
-		vorteilswerte.each { kosten += it.calculateRPKosten() }
-		return kosten
+	static mapping = {
+		notizen type:'text'
 	}
-
+	
     static constraints = {
-		name unique:true
-		avatar nullable:true
 		ruestung nullable:true
 		schild nullable:true
+		image nullable:true
+		nutzer nullable:true
     }
 }

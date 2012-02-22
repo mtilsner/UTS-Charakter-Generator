@@ -5,19 +5,25 @@
 	font-size: 8pt;
 }
 
-.page.a4 input {
+.page.a4 textarea, .page.a4 input {
 	font-size: 8pt;
-	height: 14pt;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	padding: 0 2px;
+}
+
+.page.a4 input {
+	height: 14pt;
+	padding-top: auto;
+	padding-right: auto;
 }
 
 .page.a4 .printable {
 	position: absolute;
 	left: 10mm;
+	width: 190mm;
 	right: 10mm;
 	top: 12.5mm;
+	height: 272mm;
 	bottom: 12.5mm;
 }
 

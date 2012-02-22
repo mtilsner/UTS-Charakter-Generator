@@ -16,7 +16,7 @@
 			<g:message code="charakter.resourcepunkte.label" default="Resourcepunkte" />
 			<g:field type="text" id="resourcepunkte_wert" name="resourcepunkte" class="rp rp-charakter" value="0" tabindex="-1" readonly="readonly" />
 		</div>
-		<g:form>
+		<g:form controller="builder" action="save" id="${charakterInstance?.id}">
 			<div class="page a4 centered page_1">
 				<div class="printable">
 					<g:render template="name" />
@@ -30,6 +30,7 @@
 					<g:render template="talente-seite2" />
 					<g:render template="notizen" />
 				</div>
+				<g:submitButton name="save" value="speichern" />
 			</div>
 		</g:form>
     </body>

@@ -2,12 +2,10 @@ package uts.chargen
 
 class Talentwert {
 
-	Talent talent
-	Charakter charakter
-
-	Integer wert
-	
+	static belongsTo = [charakter: Charakter]
 	static hasMany = [spezialisierungen: String]
+	
+	Integer wert
 	
 	public Integer calculateRPKosten() {
 		def kosten = 0

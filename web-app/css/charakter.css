@@ -34,7 +34,7 @@ div.page {
 	margin: 10px;
 }
 
-/* Allgemeines Layout für Charakter Name, Behinderungen, Attribute, Talente, Notizen und Vorteile */
+/* Allgemeines Layout für alle Charakter Eigenschaften */
 .page section {
 	position: relative;
 	display: block;
@@ -50,6 +50,7 @@ div.page {
 	color: #333;
 	font-weight: bold;
 	padding: 0;
+	padding-bottom: 3pt;
 	margin: 0;
 }
 
@@ -109,7 +110,8 @@ div.page {
 	font-weight: bold;
 }
 
-/* Spezielles Layout */
+/* Spezielles Layout für einzelne Charakter Eigenschaften */
+/* -> Charakter Name */
 .page .field.name .value .stretcher {
 	position: absolute;
 	left: 0;
@@ -121,6 +123,7 @@ div.page {
 	border-bottom: 1px solid #ccc;
 }
 
+/* -> Charakter Attribute */
 .page .field.attribut .value .kaestchenContainer {
 	position: absolute;
 	top: 0;
@@ -128,17 +131,16 @@ div.page {
 	margin-left: 2px;
 }
 
+/* -> Charakter Talente */
 .page .field.talent-flexibel .label {
 	padding: 0;
 }
-
 .page .field.talent-flexibel .label input {
 	border: 0 none;
 	border-bottom: 1px solid #ccc;
 	margin-left: -5px;
 	width: 90%;
 }
-
 .page .field.talent .value .wert {
 	width: 4em;
 	text-align: center;
@@ -146,14 +148,12 @@ div.page {
 	padding-left: 0;
 	padding-right: 0;
 }
-
 .page .field.talent .value .bonus {
 	border: 0 none;
 	width: 3em;
 	color: #333;
 	text-align: center;
 }
-
 .page .field.talent .value .stretcher {
 	position: absolute;
 	right: 0px;
@@ -161,26 +161,40 @@ div.page {
 	margin-left: 24px;
 	top: 0;
 }
-
 .page .field.talent .value .spezialisierung {
 	width: 100%;
 }
 
-
-
-
-/* Generelles Layout der Notizen *
-.notizen .label {
-	font-size: 1.17em;
-	color: #333;
-	font-weight: bold;
-	
+/* -> Charakter Notiz */
+.page_2 .printable {
+	display: table;
+	height: 100%;
 }
-
-.notizen .value {
-	border: 1px solid #ccc;
-	padding: 1em;
-	margin-top: 5px;
-	margin-left: -5px;
+.page_2 .printable section {
+	display: table-row;
+	height: 0;
 }
-*/
+.page_2 .printable section#notizen {
+	height: 100%;
+}
+.page_2 .printable section .fieldset {
+	display: table-cell;
+}
+.page_2 .printable section .fieldset.notizen {
+	height: 100%;
+}
+.page .fieldset.notizen .legend {
+	position: absolute;
+}
+.page .field.notiz {
+	position: absolute;
+	left: -5px;
+	right: 0px;
+	top: 20px;
+	bottom: 0;
+	width: auto;
+}
+.page .field.notiz .value {
+	width: 100%;
+	height: 100%;
+}
